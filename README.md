@@ -84,22 +84,3 @@ All POST endpoints accept: `{ "resume": "...", "job_description": "..." }`
 3. Environment variable: `VITE_API_URL=https://your-backend.onrender.com`
 4. Deploy
 
----
-
-## Interview Talking Points
-
-- **Why cosine similarity?** It measures semantic angle between vectors, not magnitude — so a 500-word resume isn't penalised vs a 1000-word one
-- **Why all-MiniLM-L6-v2?** Best speed/accuracy tradeoff for short texts (~90MB, runs on CPU)
-- **How to scale?** Batch embeddings, cache by resume hash, async FastAPI workers, Redis for caching
-- **How to improve accuracy?** Fine-tune the embedding model on resume/JD pairs, use section-level matching instead of full-text
-
----
-
-## Feature Ideas (add to impress interviewers)
-
-- [ ] PDF upload support (parse resume directly)
-- [ ] Score history — save past analyses to localStorage
-- [ ] Side-by-side diff view showing exactly which sentences match
-- [ ] Multiple JD comparison — rank which job fits best
-- [ ] Chrome extension — score any job listing on LinkedIn/Indeed
-- [ ] Authentication + dashboard (Supabase)
